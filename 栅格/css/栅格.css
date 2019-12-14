@@ -1,0 +1,415 @@
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+a {
+  padding: 0 !important;
+  margin: 0;
+  list-style: none;
+  font-family: Merienda;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.rows {
+  *zoom: 1;
+}
+.rows::after {
+  content: "";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+}
+.co-xs-1 {
+  width: 8.33333333%;
+}
+.co-xs-2 {
+  width: 16.66666667%;
+}
+.co-xs-3 {
+  width: 25%;
+}
+.co-xs-4 {
+  width: 33.33333333%;
+}
+.co-xs-5 {
+  width: 41.66666667%;
+}
+.co-xs-6 {
+  width: 50%;
+}
+.co-xs-7 {
+  width: 58.33333333%;
+}
+.co-xs-8 {
+  width: 66.66666667%;
+}
+.co-xs-9 {
+  width: 75%;
+}
+.co-xs-10 {
+  width: 83.33333333%;
+}
+.co-xs-11 {
+  width: 91.66666667%;
+}
+.co-xs-12 {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .co-xs-1 {
+    width: 8.33333333%;
+  }
+  .co-xs-2 {
+    width: 16.66666667%;
+  }
+  .co-xs-3 {
+    width: 25%;
+  }
+  .co-xs-4 {
+    width: 33.33333333%;
+  }
+  .co-xs-5 {
+    width: 41.66666667%;
+  }
+  .co-xs-6 {
+    width: 50%;
+  }
+  .co-xs-7 {
+    width: 58.33333333%;
+  }
+  .co-xs-8 {
+    width: 66.66666667%;
+  }
+  .co-xs-9 {
+    width: 75%;
+  }
+  .co-xs-10 {
+    width: 83.33333333%;
+  }
+  .co-xs-11 {
+    width: 91.66666667%;
+  }
+  .co-xs-12 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .co-sm-1 {
+    width: 8.33333333%;
+  }
+  .co-sm-2 {
+    width: 16.66666667%;
+  }
+  .co-sm-3 {
+    width: 25%;
+  }
+  .co-sm-4 {
+    width: 33.33333333%;
+  }
+  .co-sm-5 {
+    width: 41.66666667%;
+  }
+  .co-sm-6 {
+    width: 50%;
+  }
+  .co-sm-7 {
+    width: 58.33333333%;
+  }
+  .co-sm-8 {
+    width: 66.66666667%;
+  }
+  .co-sm-9 {
+    width: 75%;
+  }
+  .co-sm-10 {
+    width: 83.33333333%;
+  }
+  .co-sm-11 {
+    width: 91.66666667%;
+  }
+  .co-sm-12 {
+    width: 100%;
+  }
+  .containers {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .co-md-1 {
+    width: 8.33333333%;
+  }
+  .co-md-2 {
+    width: 16.66666667%;
+  }
+  .co-md-3 {
+    width: 25%;
+  }
+  .co-md-4 {
+    width: 33.33333333%;
+  }
+  .co-md-5 {
+    width: 41.66666667%;
+  }
+  .co-md-6 {
+    width: 50%;
+  }
+  .co-md-7 {
+    width: 58.33333333%;
+  }
+  .co-md-8 {
+    width: 66.66666667%;
+  }
+  .co-md-9 {
+    width: 75%;
+  }
+  .co-md-10 {
+    width: 83.33333333%;
+  }
+  .co-md-11 {
+    width: 91.66666667%;
+  }
+  .co-md-12 {
+    width: 100%;
+  }
+  .containers {
+    width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  .co-lg-1 {
+    width: 8.33333333%;
+  }
+  .co-lg-2 {
+    width: 16.66666667%;
+  }
+  .co-lg-3 {
+    width: 25%;
+  }
+  .co-lg-4 {
+    width: 33.33333333%;
+  }
+  .co-lg-5 {
+    width: 41.66666667%;
+  }
+  .co-lg-6 {
+    width: 50%;
+  }
+  .co-lg-7 {
+    width: 58.33333333%;
+  }
+  .co-lg-8 {
+    width: 66.66666667%;
+  }
+  .co-lg-9 {
+    width: 75%;
+  }
+  .co-lg-10 {
+    width: 83.33333333%;
+  }
+  .co-lg-11 {
+    width: 91.66666667%;
+  }
+  .co-lg-12 {
+    width: 100%;
+  }
+  .containers {
+    width: 1140px;
+  }
+  .carousel-caption {
+    margin-bottom: 595px;
+    font-size: 40px;
+  }
+}
+[class*=co-] {
+  float: left;
+}
+[class*=containers] {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+[class*=container-fluids] {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@font-face {
+  font-family: Merienda;
+  src: url(MERIENDA-REGULAR_1.TTF);
+}
+.navbar {
+  height: 60px;
+  padding: 8px 16px;
+  margin-bottom: 0;
+  border: none;
+}
+.navbar .brand {
+  padding: 0;
+  width: 260px;
+  float: left;
+  text-align: center;
+}
+.navbar .brand img {
+  position: relative;
+  float: left;
+  top: -4px;
+}
+.navbar .brand span {
+  display: inline-block;
+  margin-top: 14px;
+}
+.slide img {
+  width: 100vw;
+}
+.slide ol li {
+  width: 120px;
+  height: 5px;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid white;
+}
+.slide ol li.active {
+  width: 120px;
+  height: 6px;
+  border-radius: 1px;
+}
+.slide .item .carousel-caption {
+  line-height: 36px;
+}
+.stage img {
+  width: 550px;
+}
+.stage .abc {
+  height: 80px;
+}
+.stage .abc h3 {
+  text-align: center;
+  font-size: 40px;
+}
+.stage .bcd {
+  background: #faf8f8;
+}
+.stage .bcd .session1 h3 {
+  font-size: 25px;
+  font-weight: blod;
+}
+.stage .bcd .session1 h5 {
+  font-size: 1.3em;
+  font-weight: 100;
+  line-height: 1.3em;
+  margin-bottom: 40px;
+}
+.stage .bcd .session2 h4 {
+  font-size: 20px;
+  font-weight: blod;
+}
+.stage .bcd .session2 h5 {
+  font-size: 1.3em;
+  font-weight: 100;
+  line-height: 1.3em;
+  margin-bottom: 50px;
+}
+.stage .bcd .session3 h3 {
+  font-size: 25px;
+  font-weight: blod;
+}
+.stage .bcd .session3 h5 {
+  font-size: 1.3em;
+  font-weight: 100;
+  line-height: 1.3em;
+  margin-bottom: 30px;
+}
+.stage .bcd .session4 h4 {
+  font-size: 20px;
+  font-weight: blod;
+}
+.stage .bcd .session4 h5 {
+  font-size: 1.3em;
+  font-weight: 100;
+  line-height: 1.3em;
+}
+.stage2 .dsb {
+  position: relative;
+}
+.stage2 .dsb h2 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  margin: 50px 0;
+}
+.stage2 .def {
+  background: #faf8f8;
+}
+.stage2 .def .meetmenu {
+  overflow: hidden;
+  border: 1px solid #e4e1e1;
+  margin: 0 10px;
+  background: white;
+}
+.stage2 .def .meetmenu img {
+  height: 240px;
+}
+.stage2 .def .meetmenu h4 {
+  font-size: 20px;
+  text-indent: 20px;
+  margin: 30px 0;
+}
+.stage2 .def .meetmenu h5 {
+  text-indent: 40px;
+}
+.cont .con h2 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  margin: 50px 0;
+}
+.cont .con img {
+  width: 100%;
+  filter: brightness(60%);
+  z-index: 0;
+}
+.cont .con span {
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+}
+.cont .con span #1 {
+  margin-top: 70%;
+  margin-left: 20%;
+}
+.infomation {
+  background: #faf8f8;
+  margin: 20px auto;
+}
+.localtion h1 {
+  margin: 40px auto;
+  text-align: center;
+}
+.localtion h2 {
+  margin: 20px 0;
+  font-size: 24px;
+}
+.localtion h4 {
+  font-size: 18px;
+}
+.localtion1 h2 {
+  font-size: 10px;
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  margin-top: 10px;
+}
+.localtion1 img {
+  height: 30px;
+  width: 30px;
+  margin-left: 60px;
+}

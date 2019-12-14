@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .stage {
+        width: 650px;
+        height: 600px;
+        margin: 0 auto;
+        background: url("./turntable-bg.jpg") no-repeat;
+        position: relative;
+        text-align: center;
+      }
+      .stage img {
+        position: absolute;
+      }
+      .stage img.first {
+        top: 60px;
+        left: 118px;
+      }
+      .stage img.second {
+        top: 156px;
+        left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <img class="first" src="./turntable.png" alt="" />
+      <img class="second" src="./pointer.png" alt="" />
+    </div>
+    <script>
+      Math.random() * 100;
+      Math.floor(Math.random() * 100);
+      var first=document.getElementsByClassName("first")[0];
+      var second=document.getElementsByClassName("second")[0];
+
+      second.onclick=function () {
+        var a= sss();
+            var b=add(a);
+            uodate(b)
+       
+
+
+      }
+      function sss() {
+            return Math.floor(Math.random() * 100) };
+
+
+      function add(n) {
+        if (n < 3) {
+            return {code:1,text:"一等奖"};
+        } else if (n < 8) {
+            return {code:2,text:"二等奖"};
+        } else if (n < 15) {
+            return {code:3,text:"三等奖"};
+        } else if (n < 25) {
+            return {code:4,text:"四等奖"};
+        } else if (n < 40) {
+            return {code:5,text:"五等奖"};
+        } else if (n < 65) {
+            return {code:6,text:"安慰奖"};
+        } else {
+            return {code:7,text:"没中奖"};
+        }
+      }
+
+      function uodate(obj) {
+         var x=360/14+(360/7)*(obj.code-1);
+         first.style.transition="all 3s"
+          first.style.transform="rotate("+(x+360*3)+"deg)";
+          setTimeout(function() {
+            first.style.transition="none";
+            first.style.tranform="rotate("+x+"deg)";
+            alert(obj.text)
+          }, 3500);
+      }
+    </script>
+  </body>
+</html>

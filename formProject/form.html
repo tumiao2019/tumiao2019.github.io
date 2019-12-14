@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html {
+        background-image: url("./66027502_p0.jpg");
+        background-size: cover;
+      }
+      body {
+        background: lightgreen;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        position: relative;
+      }
+
+      .stage {
+        position: absolute;
+        opacity: 0.7;
+        width: 600px;
+        height: 800px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      header {
+        position: relative;
+      }
+      header a:first-child {
+        float: left;
+      }
+      header a:last-child {
+        float: right;
+      }
+      img {
+        width: 210px;
+        position: relative;
+        margin-top: 30px;
+      }
+      .form {
+        background: white;
+        width: 600px;
+        height: 700px;
+        position: absolute;
+
+        top: 100px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        border-radius: 20px;
+      }
+      .form input {
+        width: 400px;
+        margin: 25px auto;
+        position: relative;
+        font-size: 30px;
+        top: 0;
+        left: 0;
+        outline: none;
+        display: block;
+        padding: 10px 20px;
+      }
+      .form input:first-child {
+        margin-top: 70px;
+      }
+      .inp {
+        width: 260px;
+        height: 20;
+        position: relative;
+        font-size: 10px;
+        margin: 20px auto;
+      }
+      a {
+        color: red;
+      }
+      #f {
+        border: none;
+        color: white;
+        text-align: center;
+        position: relative;
+        background-color: orange;
+        line-height: 10px;
+        width: 300px;
+        height: 50px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <header>
+        <a href="">返回首页</a>
+        <a href="">已有账号？去登录</a>
+      </header>
+      <form action="" method="get" class="form">
+        <img src="./logo.png" alt="" />
+        <input
+          type="text"
+          name="phone"
+          id="a"
+          placeholder="手机号码"
+          onchange="checkRegex(phoneReg)"
+        />
+        <input
+          type="text"
+          name="mark"
+          id="b"
+          placeholder="动态码"
+          onchange="checkegex(markReg)"
+        />
+        <input
+          type="text"
+          name="username"
+          id="c"
+          placeholder="用户名"
+          onchange="checkgex(usernameReg)"
+        />
+        <input
+          type="password"
+          name="password"
+          id="d"
+          placeholder="密码"
+          onchange="checkex(pasReg)"
+        />
+        <input
+          type="password"
+          name="confirm"
+          id="e"
+          placeholder="确认密码"
+          onchange="checkPas()"
+        />
+        <div class="inp">
+          注册即同意<a herf="">《用户使用协议》</a>&<a herf=""
+            >《隐私权条款》</a
+          >
+        </div>
+        <input type="submit" value="注册" id="f" onclick="asd()" />
+      </form>
+    </div>
+
+    <script>
+      var phoneReg = /^\d{11}$/;
+      var markReg = /^\d{6}$/;
+      var usernameReg = /.*[\u4e00-\u9fa5 a-z 0-9]{3,10}.*/;
+      var pasReg = /^\w{6,20}$/;
+      var arrr = [];
+      var asd = false;
+      var dsa = false;
+
+      function checkRegex(regex) {
+        if (regex.test(event.target.value)) {
+          event.target.style.border = "1px solid green";
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function checkegex(regex) {
+        if (regex.test(event.target.value)) {
+          event.target.style.border = "1px solid green";
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function checkgex(regex) {
+        if (regex.test(event.target.value)) {
+          event.target.style.border = "1px solid green";
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function checkex(regex) {
+        if (regex.test(event.target.value)) {
+          event.target.style.border = "1px solid green";
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function checkRegex(regex) {
+        if (regex.test(event.target.value)) {
+          event.target.style.border = "1px solid green";
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function checkPas() {
+        if (
+          document.querySelectorAll("input")[3].value === event.target.value
+        ) {
+          event.target.style.border = "1px solid green";
+          dsa = true;
+          return dsa;
+        } else {
+          event.target.style.border = "1px solid red";
+        }
+      }
+
+      function asd() {
+        if (asd && dsa) {
+          alert("注册成功");
+        } else {
+          alert("信息不完整");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .bigshow {
+        width: 800px;
+        height: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .stage {
+        width: 400px;
+        height: 800px;
+        position: absolute;
+      }
+      .smallshow {
+        width: 400px;
+        height: 800px;
+        overflow: hidden;
+        position: absolute;
+        pointer-events: none;
+      }
+      .bigshow div.line {
+        height: 800px;
+        width: 10px;
+        background: lightcoral;
+        position: absolute;
+      }
+
+      .stage div.sss {
+        position: relative;
+        height: 100%;
+      }
+      .smallshow div.ssr {
+        position: relative;
+        height: 100%;
+      }
+
+      img {
+        width: 800px;
+        height: 800px;
+        z-index: -1;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bigshow">
+      <div class="line"></div>
+
+      <div class="stage">
+        <!-- <div class="ball"></div> -->
+        <div class="sss">
+          <span><img src="./SOL_ET_LUNA封面.jpg" alt=""/></span>
+        </div>
+      </div>
+
+      <div class="smallshow">
+        <div class="ssr">
+          <span><img src="./Pure_Heart封面.jpg" alt=""/></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var line = $(".bigshow div.line");
+
+      $(".bigshow").mousemove(function(e) {
+        var x = e.clientX - $(this).offset().left;
+        // values: e.clientX, e.clientY, e.pageX, e.pageY
+        line.css("left", e.clientX - $(this).offset().left);
+        $(".stage").css("width", "800" - x + "px");
+        $(".smallshow").css("width", x + "px");
+
+        /* onsole.log(event); */
+      });
+    </script>
+  </body>
+</html>

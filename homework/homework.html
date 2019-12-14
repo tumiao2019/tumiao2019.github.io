@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+        vertical-align: bottom;
+      }
+      .stage {
+        width: 1600px;
+        margin: 0 auto;
+        background: lightblue;
+        position: relative;
+      }
+      .stage ul.show li {
+        opacity: 0;
+        transition: all 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .stage ul.show li:first-child {
+        opacity: 1;
+        position: static;
+      }
+
+      .prnx span {
+        position: absolute;
+        width: 50px;
+        height: 80px;
+        background: #909090;
+        color: white;
+        line-height: 80px;
+        text-align: center;
+        transition: all 0.5s;
+      }
+      .prnx span img {
+        width: 50%;
+        margin-bottom: 12px;
+      }
+      .prnx span:first-child {
+        top: 50%;
+        left: 0;
+        opacity: 0;
+      }
+      .prnx span:last-child {
+        top: 50%;
+        right: 0;
+        opacity: 0;
+      }
+      .point {
+        height: 40px;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: inline-block;
+      }
+      .point span {
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 50%;
+        display: inline-block;
+        background: lightgray;
+        border-radius: 20px;
+      }
+      .point span.active {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <ul class="show">
+        <li><img src="./lunbo1.jpg" alt="" /></li>
+        <li><img src="./lunbo2.jpg" alt="" /></li>
+        <li><img src="./lunbo3.jpg" alt="" /></li>
+      </ul>
+      <div class="prnx">
+        <span><img src="./preImg.png" alt=""/></span>
+        <span><img src="./nexImg.png" alt=""/></span>
+      </div>
+      <div class="point">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      var x = 0;
+      var index = 0;
+
+      $(".prnx span")
+        .eq(1)
+        .click(function() {
+          x++;
+          if (x > 2) {
+            x = 0;
+          }
+          $(".show li")
+            .eq(x)
+            .css("opacity", "1")
+            .siblings()
+            .css("opacity", "0");
+          $(".point span")
+            .eq(x)
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+        });
+      $(".prnx span")
+        .eq(0)
+        .click(function() {
+          x--;
+          if (x < 0) {
+            x = 2;
+          }
+          $(".show li")
+            .eq(x)
+            .css("opacity", "1")
+            .siblings()
+            .css("opacity", "0");
+          $(".point span")
+            .eq(x)
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+        });
+      $(".point span").click(function() {
+        console.log($(".point span").eq(this));
+
+        $(".point span")
+          .eq($(this).index())
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+        $(".show li")
+          .eq($(this).index())
+          .css("opacity", "1")
+          .siblings()
+          .css("opacity", "0");
+      });
+      $(".prnx span")
+        .eq(1)
+        .mousemove(function() {
+          $(".prnx span").css("opacity", "1");
+        });
+      $(".prnx span")
+        .eq(1)
+        .mouseout(function() {
+          $(".prnx span").css("opacity", "0");
+        });
+      $(".prnx span")
+        .eq(0)
+        .mousemove(function() {
+          $(".prnx span").css("opacity", "1");
+        });
+      $(".prnx span")
+        .eq(0)
+        .mouseout(function() {
+          $(".prnx span").css("opacity", "0");
+        });
+        setTimeout(function () { 
+          x++;
+          if (x > 2) {
+            x = 0;
+          }
+            $(".show li")
+            .eq(x)
+            .css("opacity", "1")
+            .siblings()
+            .css("opacity", "0");
+          $(".point span")
+            .eq(x)
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+          
+         }, 3000);
+    </script>
+  </body>
+</html>

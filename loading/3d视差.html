@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./3d视差/视差.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="one">
+            <div class="bg1"></div>
+            
+        </div>
+        <div class="two">
+            <div class="bg2"></div>
+            
+        </div>
+        <div class="three">
+             <div class="bg3"></div>
+           
+        </div>
+    </div>
+    <script>
+    var card=document.querySelector(".card")
+    var img1 =document.querySelector(".one .bg1")
+    var img2 =document.querySelector(".two .bg2")
+    var img3 =document.querySelector(".three .bg3")
+
+    document.querySelector("body").onmousemove=function(event){
+        console.log(event);
+        var x=event.clientX-card.offsetLeft-card.offsetWidth/2;
+        var y=event.clientY-card.offsetTop-card.offsetHeight/2;
+        console.log(x,y);
+
+        card.style.transform = "rotateY(" + -x / 80 + "deg) rotateX(" + y / 80 + "deg)";
+        img1.style.backgroundPosition =(-x / 100 +-4.75) +"px " +(-y / 100 + 60) +"px, " +(x / 80 + -10) +"px " +(y / 80 + -10) +"px";
+
+        img2.style.backgroundPosition =(-x / 100 +12.12) +"px " +(-y / 100 + 60) +"px, " +(x / 80 + -10) +"px " +(y / 80 + -10) +"px";
+        img3.style.backgroundPosition =(-x / 100 +-9.8) +"px " +(-y / 100 + 46) +"px, " +(x / 80 + -10) +"px " +(y / 80 + -10) +"px";
+        
+        
+
+    }
+    </script>
+</body>
+</html>

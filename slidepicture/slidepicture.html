@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .bigshow {
+        background: cadetblue;
+        width: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+      .bigshow img {
+        width: 350px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        vertical-align: middle;
+        transition: all 0.5s;
+      }
+      .bigshow img:first-child {
+        position: static;
+      }
+      .bigshow1 {
+        background: cadetblue;
+        width: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+      .bigshow1 img {
+        width: 350px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        vertical-align: middle;
+        transition: all 0.5s;
+      }
+      .bigshow1 img:first-child {
+        position: static;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bigshow">
+      <img src="./a1.png" alt="" />
+      <img src="./a2.png" alt="" />
+      <img src="./a3.png" alt="" />
+      <img src="./a4.png" alt="" />
+    </div>
+    <br>
+    <div class="bigshow1">
+      <img src="./a1.png" alt="" />
+      <img src="./a2.png" alt="" />
+      <img src="./a3.png" alt="" />
+      <img src="./a4.png" alt="" />
+    </div>
+    <script>
+      var bigshow = document.querySelector(".bigshow");
+      var imgs = document.querySelectorAll(".bigshow img");
+      for (var j = 0; j < imgs.length; j++) {
+        imgs[j].style.left = (100 / imgs.length) * j + "%";
+      }
+      imgs.forEach(function(img, index) {
+        img.onclick = function add() {
+          imgs.forEach(function(ele, i) {
+            if (i <= index) {
+              
+              ele.style.left =
+                i * ((bigshow.offsetWidth - imgs[0].offsetWidth) /(imgs.length - 1)) +"px";
+            } else {
+              ele.style.left =
+                (i-1) *((bigshow.offsetWidth - imgs[0].offsetWidth) /(imgs.length-1))+imgs[0].offsetWidth +"px";
+            }
+            ele.onmouseout = function() {
+              /* console.log(ind); */
+              imgs.forEach(function(e, id) {
+                e.style.left = (bigshow.offsetWidth / imgs.length) * id + "px";
+              });
+            };
+          });
+        };
+      });
+
+      var bigshow1 = document.querySelector(".bigshow1");
+      var imgs1 = document.querySelectorAll(".bigshow1 img");
+      for (var j = 0; j < imgs1.length; j++) {
+        imgs1[j].style.left = (100 / imgs1.length) * j + "%";
+      }
+      imgs1.forEach(function(img, index) {
+        img.onmouseover = function add() {
+          imgs1.forEach(function(ele, i) {
+            if (i <= index) {
+              
+              ele.style.left =
+                i * ((bigshow1.offsetWidth - imgs1[0].offsetWidth) /(imgs1.length - 1)) +"px";
+            } else {
+              ele.style.left =
+                (i-1) *((bigshow1.offsetWidth - imgs1[0].offsetWidth) /(imgs1.length-1))+imgs[0].offsetWidth +"px";
+            }
+            ele.onmouseout = function() {
+              /* console.log(ind); */
+              imgs1.forEach(function(e, id) {
+                e.style.left = (bigshow1.offsetWidth / imgs1.length) * id + "px";
+              });
+            };
+          });
+        };
+      });
+      /* imgs.forEach(function(eye, ind) {   bigshow.offsetWidth-img[i].offsetWidth
+          eye.onmouseout = function() { */
+      /* console.log(ind); */
+      /* imgs.forEach(function (e,id) {
+                 
+                    eye.style.left = (500 / 4) * ind  + "px";
+                  
+               
+              })
+            
+          };
+        }); */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+body{
+    background: black;
+    
+}
+.stage{
+    width: 100%;
+    height: 100vh;
+    
+    .abc{
+        transform-style: preserve-3d;
+        .ab{
+
+            fill:white; 
+            stroke:white;
+            animation: zxc 1.5s linear initial ;
+        }
+    }
+    
+}
+
+@keyframes zxc {
+    0%{
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+    25%{
+        opacity: 0;
+        transform: translateX(0) translateY(0);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+    75%{
+        opacity: 0;
+        transform: translateX(-5px) translateY(5px);
+    }
+    75%{
+        opacity: 1;
+        transform: translateX(-5px) translateY(5px);
+    }
+}

@@ -1,0 +1,203 @@
+.stage{
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    position: relative;
+    background: rgb(5, 4, 90);
+    .animate{
+        width: 50px;
+        height: 50px;
+        transform: rotate(45deg);
+        position: relative;
+        margin: 75px auto;
+    }
+    
+    .stageall{
+        width: 200px;
+        height: 200px;
+        border: 2px solid rgb(118, 116, 235);
+        position: absolute;
+        margin-left:150px ;
+        margin-top: 150px;
+        background:rgb(39, 37, 172) ;
+        
+    }
+    .box{
+        width: 20px;
+        height: 20px;
+        background: white;
+        position: absolute;
+    }
+        .stage1{
+            
+            .box1{
+                background: #5C6BC0;
+                animation: xuanzhuan 1s cubic-bezier(0, 0, 0, 0.99) 0s infinite;
+                
+            }
+            .box2{
+               right:  0;
+               
+               background: #8BC34A;
+               animation: xuanzhuan1 1s cubic-bezier(0, 0, 0, 0.99) 0s infinite;
+            }
+            .box3{
+                bottom: 0;
+                background: #FFB74D;
+                animation: xuanzhuan2 1s cubic-bezier(0, 0, 0, 0.99) 0s infinite;
+            }
+            .box4{
+                bottom: 0;
+                right: 0;
+                background: #F44336;
+                animation: xuanzhuan3 1s cubic-bezier(0, 0, 0, 0.99) 0s infinite;
+            }
+        }
+    
+    .stage2{
+        margin-left: 500px;
+        .bax2{
+            transform: rotate(0);
+            animation: box 1s ease-out 0s infinite;
+            .boxa{
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #5C6BC0;
+                animation:xuanzhuan5 0.5s ease 0s infinite;
+            }
+            .boxb{
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #8BC34A;
+                right: 0;
+                animation:xuanzhuan6 0.5s ease 0s infinite;
+            }
+            .boxc{
+                bottom: 0;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #FFB74D;
+                animation:xuanzhuan7 0.5s ease 0s infinite;
+            }
+            .boxd{
+                bottom: 0;
+                right: 0;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #F44336;
+                animation:xuanzhuan8 0.5s ease 0s infinite;
+            }
+        }
+    }
+}
+
+@keyframes xuanzhuan{
+    0%{
+        margin-top: 0;
+        margin-left:0 ;
+    }
+    50%{
+        margin-top: 27px;
+        margin-left:27px ;
+    }
+    100%{
+        margin-top: 0;
+        margin-left:0 ;
+    }
+}
+@keyframes xuanzhuan1{
+    0%{
+        margin-top: 0;
+        margin-right:0 ;
+    }
+    50%{
+        margin-top: 27px;
+        margin-right:27px ;
+    }
+    100%{
+        margin-top: 0;
+        margin-right:0 ;
+    }
+}
+@keyframes xuanzhuan2{
+    0%{
+        margin-bottom: 0;
+        margin-left:0 ;
+    }
+    50%{
+        margin-bottom: 27px;
+               margin-left:27px ;
+    }
+    100%{
+        margin-bottom: 0;
+               margin-left:0 ;
+    }
+}
+@keyframes xuanzhuan3{
+    0%{
+        margin-right: 0;
+        margin-bottom:0 ;
+    }
+    50%{
+        margin-right: 27px;
+        margin-bottom:27px ;
+    }
+    100%{
+        margin-right: 0;
+        margin-bottom:0 ;
+    }
+}
+
+
+
+@keyframes box{
+    0%{
+        transform:rotate(0deg)
+    }
+    5%{
+        transform:rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+
+@keyframes xuanzhuan5{
+    0%{
+        transform: translate(0,0);
+    }
+    
+    100%{
+        transform: translate(40px,40px);
+    }
+}
+@keyframes xuanzhuan6{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-40px,40px);
+    }
+}
+
+@keyframes xuanzhuan7{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(40px,-40px);
+    }
+}
+@keyframes xuanzhuan8{
+    0%{
+        transform: translate(0,0);
+    }
+    
+    100%{
+        transform: translate(-40px,-40px);
+    }
+}

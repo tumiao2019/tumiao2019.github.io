@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        background: cornflowerblue;
+      }
+      .bigshow {
+        width: 80%;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .bigshow b {
+        font-weight: normal;
+        font-family: "宋体";
+      }
+      .bigshow b.success {
+        color: thistle;
+      }
+      .bigshow b.error {
+        color: red;
+      }
+      .bigshow .inputed input {
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bigshow">
+      <div class="ori"></div>
+      <div class="inputed">
+        <span class="ren"></span>
+        <input type="text" id="text" />
+      </div>
+    </div>
+    <script>
+      var bigshow = document.querySelector(".bigshow");
+      var ori = bigshow.querySelector(".ori");
+      var ren = bigshow.querySelector(".ren");
+      var text = bigshow.querySelector("#text");
+      var str = "谁他妈买小米窝窝头两块钱四个";
+      function name() {
+        str.split("").forEach(function(letter, ind, strarray) {
+          var node = document.createElement("b");
+          node.innerText = letter;
+          ori.appendChild(node);
+        });
+      }
+      name();
+      text.focus();
+      var condition = true;
+      text.oninput = function() {
+        var userin = this.value;
+        var isinclude = userin.split("").some(function(letter, ind, strarray) {
+          return "qwertyuiopasdfghjklzxcvbnm1234567890".indexOf(letter) !== -1;
+        });
+        if (isinclude) {
+          return;
+        }
+        if (condition) {
+          userin.split("").forEach(function(letter, ind, strarray) {
+            var node = document.createElement("b");
+            node.innerText = letter;
+            ren.appendChild(node);
+            var last1 = ren.querySelectorAll("b").length - 1;
+            
+            if (ori.querySelectorAll("b").item(last1).innerText=== letter) {
+               
+              ori.querySelectorAll("b").item(last1).classList.add("success");
+              ren.querySelectorAll("b").item(last1).classList.add("success");
+            } else {
+              ori.querySelectorAll("b").item(last1).classList.add("error");
+              ren.querySelectorAll("b").item(last1).classList.add("error");
+            }
+          });
+
+          condition = false;
+        }
+        setTimeout(function() {
+          condition = true;
+        }, 1);
+
+        this.value = "";
+      };
+      document.body.onkeydown = function(event) {
+        if (event.code === "Backspace" && ren.hasChildNodes) {
+          var lastind = ren.querySelectorAll("b").length - 1;
+          ren.removeChild(ren.lastElementChild);
+          ori.querySelectorAll("b").item(lastind).className = "";
+        }
+      };
+    </script>
+  </body>
+</html>
